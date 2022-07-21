@@ -1,17 +1,20 @@
 import React from 'react'
 import { Box, Stack, Typography } from '@mui/material'
 
-import Logo from '../assets/images/Logo-1.png'
 
 
-const Footer = () => {
+const Footer = ({alignment}) => {
   return (
-    <Box mt="80px" bgcolor="#fff3f4">
+    <Box mt="80px" bgcolor="#000">
       <Stack gap="40px" alignItems="center" px="40px" pt="40px">
-        <img src={Logo} alt="logo" width="200px" height="40px" />
-        <Typography variant='h5' pb="40px" mt="20px">
-          Made By Youssef Chouay for SEG3525
-        </Typography>
+        {alignment === "En" ? 
+        <Typography color="#fff" variant='h6' pb="40px" mt="20px">
+        Made By Youssef Chouay for SEG3525
+      </Typography>:
+      <Typography color="#fff" variant='h6' pb="40px" mt="20px">
+      Fait par Youssef Chouay pour SEG3525
+    </Typography>}
+        
       </Stack>
     </Box>
   )

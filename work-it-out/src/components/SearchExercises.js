@@ -4,7 +4,7 @@ import {Box, Button, Stack, TextField, Typography} from '@mui/material'
 import {exerciseOptions, fetchData} from '../utils/fetchData'
 import HorizontalScrollbar from './HorizontalScrollbar'
 
-const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
+const SearchExercises = ({setExercises, bodyPart, setBodyPart, alignment}) => {
   const [search, setSearch] = useState(''); 
   const [bodyParts, setBodyParts] = useState([]);
 
@@ -36,12 +36,20 @@ const SearchExercises = ({setExercises, bodyPart, setBodyPart}) => {
   }
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
+        {alignment === "En" ? 
         <Typography fontWeight={700} sx={{
-            fontSize:{lg:'44px', xs:"30px"}
+            fontSize:{lg:'44px', xs:"30px"},color:"#fff"
         }} 
         mb="50px" textAlign="center">
             Awesome Exercises You <br/> Should Know
-        </Typography>
+        </Typography>:
+        <Typography fontWeight={700} sx={{
+            fontSize:{lg:'44px', xs:"30px"},color:"#fff"
+        }} 
+        mb="50px" textAlign="center">
+            Fantastiques Exercises Que <br/> Vous Devez Connaitre
+        </Typography>}
+        
         <Box position="relative" mb="72px">
             <TextField
             sx={{
